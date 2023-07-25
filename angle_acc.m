@@ -1,0 +1,6 @@
+function [domiga]=angle_acc(p,q,r,l,m,n,Ix,Iy,Iz,Ixy,Ixz,Iyz,dIx,dIy,dIz,dIxy,dIxz,dIyz)
+    dp=((Iyz^2-Iy*Iz)*(l-dIx*p+dIxy*q+dIxz*r+q*(Ixz*p+Iyz*q-Iz*r)-r*(Ixy*p-Iy*q+Iyz*r)))/(Iz*Ixy^2+2*Ixy*Ixz*Iyz+Iy*Ixz^2+Ix*Iyz^2-Ix*Iy*Iz)-((Ixz*Iyz+Ixy*Iz)*(m+dIxy*p-dIy*q+dIyz*r-p*(Ixz*p+Iyz*q-Iz*r)+r*(Ixy*q-Ix*p+Ixz*r)))/(Iz*Ixy^2+2*Ixy*Ixz*Iyz+Iy*Ixz^2+Ix*Iyz^2-Ix*Iy*Iz)-((Ixz*Iy+Ixy*Iyz)*(n+dIxz*p+dIyz*q-dIz*r+p*(Ixy*p-Iy*q+Iyz*r)-q*(Ixy*q-Ix*p+Ixz*r)))/(Iz*Ixy^2+2*Ixy*Ixz*Iyz+Iy*Ixz^2+Ix*Iyz^2-Ix*Iy*Iz);
+    dq=((Ixz^2-Ix*Iz)*(m+dIxy*p-dIy*q+dIyz*r-p*(Ixz*p+Iyz*q-Iz*r)+r*(Ixy*q-Ix*p+Ixz*r)))/(Iz*Ixy^2+2*Ixy*Ixz*Iyz+Iy*Ixz^2+Ix*Iyz^2-Ix*Iy*Iz)-((Ixz*Iyz+Ixy*Iz)*(l-dIx*p+dIxy*q+dIxz*r+q*(Ixz*p+Iyz*q-Iz*r)-r*(Ixy*p-Iy*q+Iyz*r)))/(Iz*Ixy^2+2*Ixy*Ixz*Iyz+Iy*Ixz^2+Ix*Iyz^2-Ix*Iy*Iz)-((Ixy*Ixz+Ix*Iyz)*(n+dIxz*p+dIyz*q-dIz*r+p*(Ixy*p-Iy*q+Iyz*r)-q*(Ixy*q-Ix*p+Ixz*r)))/(Iz*Ixy^2+2*Ixy*Ixz*Iyz+Iy*Ixz^2+Ix*Iyz^2-Ix*Iy*Iz);
+    dr=((Ixy^2-Ix*Iy)*(n+dIxz*p+dIyz*q-dIz*r+p*(Ixy*p-Iy*q+Iyz*r)-q*(Ixy*q-Ix*p+Ixz*r)))/(Iz*Ixy^2+2*Ixy*Ixz*Iyz+Iy*Ixz^2+Ix*Iyz^2-Ix*Iy*Iz)-((Ixz*Iy+Ixy*Iyz)*(l-dIx*p+dIxy*q+dIxz*r+q*(Ixz*p+Iyz*q-Iz*r)-r*(Ixy*p-Iy*q+Iyz*r)))/(Iz*Ixy^2+2*Ixy*Ixz*Iyz+Iy*Ixz^2+Ix*Iyz^2-Ix*Iy*Iz)-((Ixy*Ixz+Ix*Iyz)*(m+dIxy*p-dIy*q+dIyz*r-p*(Ixz*p+Iyz*q-Iz*r)+r*(Ixy*q-Ix*p+Ixz*r)))/(Iz*Ixy^2+2*Ixy*Ixz*Iyz+Iy*Ixz^2+Ix*Iyz^2-Ix*Iy*Iz);
+    domiga=[dp;dq;dr];
+end

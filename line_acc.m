@@ -1,0 +1,6 @@
+function [accb]=line_acc(mu,m_S,Fx,Fy,Fz,u,v,w,p,q,r,dp,dq,dr,ah,Vh,Ph)
+     accs=[Fx;Fy;Fz]/m_S;
+     accb=accs-[q*w-r*v+mu*(ah(1,1)+2*q*Vh(3,1)-2*r*Vh(2,1)-Ph(2,1)*dr+Ph(3,1)*dq-q^2*Ph(1,1)-r^2*Ph(1,1)+p*q*Ph(2,1)+p*r*Ph(3,1));...
+                r*u-p*w+mu*(ah(2,1)-2*p*Vh(3,1)+2*r*Vh(1,1)+Ph(1,1)*dr-Ph(3,1)*dp-p^2*Ph(2,1)-r^2*Ph(2,1)+p*q*Ph(1,1)+q*r*Ph(3,1));...
+                p*v-q*u+mu*(ah(3,1)+2*p*Vh(2,1)-2*q*Vh(1,1)-Ph(1,1)*dq+Ph(2,1)*dp-p^2*Ph(3,1)-q^2*Ph(3,1)+p*r*Ph(1,1)+q*r*Ph(2,1))];
+end
